@@ -9,6 +9,7 @@ function App() {
 
   const [cantidad, guardarCantidad] = useState(0);
   const [plazo, guardarPlazo] = useState('');
+  const [total, guardarTotal] = useState(0);
 
 
   return (
@@ -16,7 +17,7 @@ function App() {
     <Fragment>
       < Header
             titulo="COTIZADOR DE PRESTAMOS"
-            cantidad={cantidad}
+            
       />
 
       <div className="container">
@@ -25,8 +26,13 @@ function App() {
             guardarCantidad={guardarCantidad}
             plazo={plazo}
             guardarPlazo={guardarPlazo}
+            total={total}
+            guardarTotal={guardarTotal}
             />
+            <p>Total a pagar $ {total}</p>
       </div>
+
+      
       
     </Fragment>      
     

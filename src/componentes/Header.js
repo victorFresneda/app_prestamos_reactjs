@@ -2,12 +2,12 @@ import React, {Fragment} from 'react';
 
 
 
-function Header({titulo, cantidad}){
+function Header({titulo}){
 
     return(
         
         <Fragment>
-       <h1>{cantidad}</h1>
+       <h1>{titulo}</h1>
         </Fragment>
         
 
