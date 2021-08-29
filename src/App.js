@@ -3,8 +3,9 @@ import './App.css';
 import React, {Fragment, useState} from 'react';
 import Header from './componentes/Header';
 import Formulario from './componentes/Formulario';
-import Mensaje from './componentes/mensaje';
-import Resultado from './componentes/resultado';
+import Mensaje from './componentes/Mensaje';
+import Resultado from './componentes/Resultado';
+import Spinner from './componentes/Spinner';
 
 function App() {
   //Se define state
@@ -12,11 +13,14 @@ function App() {
   const [cantidad, guardarCantidad] = useState(0);
   const [plazo, guardarPlazo] = useState('');
   const [total, guardarTotal] = useState(0);
+  const [cargando, guardarCargando] = useState(false);
 
 
   let componente;
 
-  if(total === 0){
+  if(cargando){
+     componente = <Spinner/>
+  }else if(total === 0){
     componente = <Mensaje/>
   }else{
     componente = <Resultado
@@ -44,6 +48,7 @@ function App() {
             guardarPlazo={guardarPlazo}
             total={total}
             guardarTotal={guardarTotal}
+            guardarCargando={guardarCargando}
             />
           <div className="mensajes">
           {componente}
